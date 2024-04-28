@@ -1,0 +1,95 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ameise"
+dynamic = ["version"]
+description = 'Ameise is a Python animation project that simulates the behavior of an ant navigating through a maze to find food.'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+    { name = "Laurent LAPORTE", email = "laurent.laporte.pro@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "click",
+    "pygame"
+]
+
+[project.urls]
+Documentation = "https://github.com/unknown/ameise#readme"
+Issues = "https://github.com/unknown/ameise/issues"
+Source = "https://github.com/unknown/ameise"
+
+[project.scripts]
+ameise = "ameise.cli:ameise"
+
+# ===================
+# Hatch configuration
+# ===================
+
+[tool.hatch.version]
+path = "src/ameise/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+    "coverage[toml]>=6.5",
+    "pytest",
+]
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = [
+    "- coverage combine",
+    "coverage report",
+]
+cov = [
+    "test-cov",
+    "cov-report",
+]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+[tool.hatch.envs.types]
+dependencies = [
+    "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/ameise tests}"
+
+# ================
+# Coverage options
+# ================
+
+[tool.coverage.run]
+source_pkgs = ["ameise", "tests"]
+branch = true
+parallel = true
+omit = [
+    "src/ameise/__about__.py",
+]
+
+[tool.coverage.paths]
+ameise = ["src/ameise", "*/ameise/src/ameise"]
+tests = ["tests", "*/ameise/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "no cov",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
