@@ -5,16 +5,16 @@ The ant randomly moves through the maze, occasionally depositing pheromones to g
 With dynamic weighting algorithms, the ant intelligently explores the maze while adapting to changes in its environment.
 Ameise provides a captivating visualization of ant behavior and maze-solving strategies.
 """
+from __future__ import annotations
 
 import importlib.resources
 import random
 import time
-import typing as t
 
 import pygame
 
 from ameise.a_star import AStar
-from ameise.graph import Graph, LIGHT_BLUE_COLOR, BLACK_COLOR
+from ameise.graph import BLACK_COLOR, LIGHT_BLUE_COLOR, Graph
 from ameise.resources import BACKGROUND_IMAGE
 
 
@@ -29,7 +29,7 @@ def game():
     g = Graph(maze)
 
     count = 1
-    ants: t.List[AStar] = []
+    ants: list[AStar] = []
     for _ in range(count):
         start_pt = random.choice(list(g.start_points))
         goal_pt = random.choice(list(g.end_points))
@@ -68,7 +68,6 @@ def game():
 
     finally:
         pygame.quit()
-
 
 
 if __name__ == '__main__':

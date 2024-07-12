@@ -1,11 +1,11 @@
 """
 Recherche de l'altitude moyenne d'un point sur la carte à partir de ses coordonnées géographiques.
 """
+import importlib.resources
 import math
 import statistics
 
 import pygame
-import importlib.resources
 
 from ameise.resources import BACKGROUND_IMAGE
 

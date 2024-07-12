@@ -22,9 +22,20 @@ def pil_image_to_surface(pil_image):
 
 
 def load_gif(filename, size=(100, 77), white=(255, 255, 255)):
+    """
+    Load a GIF animation into a surface.
+
+    Args:
+        filename: Name of the GIF animation.
+        size: Size of the GIF animation.
+        white: Color of the background.
+
+    Returns:
+        List of frames.
+    """
     pil_image = Image.open(filename)
     frames = []
-    if pil_image.format == "GIF" and pil_image.is_animated:
+    if pil_image.format == "GIF" and pil_image.is_animated:  # type: ignore
         for frame in ImageSequence.Iterator(pil_image):
             frame = frame.resize(size)
             # convert white background to transparent

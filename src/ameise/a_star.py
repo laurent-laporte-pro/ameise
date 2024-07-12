@@ -7,7 +7,7 @@ import functools
 import heapq
 import typing as t
 
-from ameise.graph import Point, Graph
+from ameise.graph import Graph, Point
 
 
 @dataclasses.dataclass
