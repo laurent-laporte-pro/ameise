@@ -1,7 +1,7 @@
-# Ameise
+# Ameise Labyrinth
 
-[![PyPI - Version](https://img.shields.io/pypi/v/ameise.svg)](https://pypi.org/project/ameise)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ameise.svg)](https://pypi.org/project/ameise)
+[![PyPI - Version](https://img.shields.io/pypi/v/ameise-labyrinth.svg)](https://pypi.org/project/ameise-labyrinth)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ameise-labyrinth.svg)](https://pypi.org/project/ameise-labyrinth)
 
 -----
 
@@ -13,9 +13,9 @@
 ## Installation
 
 ```console
-pip install ameise
+pip install ameise-labyrinth
 ```
 
 ## License
 
-`ameise` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`ameise-labyrinth` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

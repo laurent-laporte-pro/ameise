@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ameise"
+name = "ameise-labyrinth"
 dynamic = ["version"]
 description = 'Ameise is a Python animation project that simulates the behavior of an ant navigating through a maze to find food.'
 readme = "README.md"
@@ -30,9 +30,9 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/ameise#readme"
-Issues = "https://github.com/unknown/ameise/issues"
-Source = "https://github.com/unknown/ameise"
+Documentation = "https://github.com/unknown/ameise-labyrinth#readme"
+Issues = "https://github.com/unknown/ameise-labyrinth/issues"
+Source = "https://github.com/unknown/ameise-labyrinth"
 
 [project.scripts]
 ameise = "ameise.cli:ameise"
